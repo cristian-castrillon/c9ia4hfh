@@ -16,5 +16,5 @@ class Room < ActiveRecord::Base
   validates :description, length: { maximum: 400, message: "la descripción es muy larga" }
   validates :beds, numericality: { only_integer: true, message: "beds no es un número" }
   validates :guests, numericality: { only_integer: true, message: "guests no es un número" }
-  validates :title, :description, :beds, :guests, :image_url, presence: { message: "campo puede ser en blanco" }
+  validates :title, :description, :beds, :guests, :image_url, presence: true
 end
