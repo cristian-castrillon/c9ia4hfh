@@ -12,7 +12,9 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to rooms_path
     else
-      render :new
+      @errors = @room.error.full_messages
+      # render :new
+      render "rooms/new"
     end
   end
 
